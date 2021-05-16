@@ -1,4 +1,6 @@
-package com.weather.demo.service;
+package com.weather.demo.svc;
+
+import java.util.logging.Logger;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpStatus;
@@ -13,13 +15,15 @@ import springfox.documentation.spring.web.json.Json;
 
 
 @Service
-public class WeatherForecastService {
+public class WeatherForecastRetrieval {
+	
+	Logger logger = Logger.getLogger(WeatherForecastRetrieval.class.getName());
     private final String URI = "http://api.openweathermap.org/data/2.5/weather";
     private final String API_ID = "886705b4c1182eb1c69f28eb8c520e20";
 
     private final RestTemplate restTemplate;
 
-    public WeatherForecastService(RestTemplateBuilder restTemplateBuilder) {
+    public WeatherForecastRetrieval(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder.build();
     }
 
