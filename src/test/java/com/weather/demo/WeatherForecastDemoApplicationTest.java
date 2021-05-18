@@ -4,10 +4,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WeatherForecastDemoApplicationTest {
+//@TestPropertySource(locations= {"classpath:test-configuration.properties"})
+public class WeatherForecastDemoApplicationTest {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
+	
+	 @Test
+	   public void main() {
+		 WeatherForecastDemoApplication.main(new String[] {});
+	   }
 
 }
